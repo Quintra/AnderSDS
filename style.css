@@ -108,7 +108,7 @@
 
 /*--Menu-Mobile--*/
 .menu-btn{
-	color: blueviolet; /*3 traços*/
+	color: white; /*3 traços*/
 	font-size:50px; 
 	cursor:-pointer;
 	display: none;
@@ -142,8 +142,8 @@ section .title::after{
 	bottom: -10px;
 	left: 50%;
 	font-size: 20px;
-	background: darkblue; /* fundo la */
-	color: lightblue;
+	background: black; /* fundo la */
+	color: white;
 	padding: spx;
 	transform: translateX(-50%);
 }
@@ -188,7 +188,7 @@ section .title::after{
 	font-size: 20px;
 	padding: 10px 30px;
 	border border-radius: 6px;
-	border: 2px solid purple;
+	border: 2px solid black;
 	transition: all 0.3s ease;
 }
 .about .about-content .right a:hover{ 
@@ -211,7 +211,7 @@ services .title::before{
 }
 .services .title::after{
 	background: #141639;
-	content: "que se foda";
+	content: "Nem sei";
 }
 .services .serv-content .card{
 	width: calc(33% - 20px);
@@ -224,7 +224,7 @@ services .title::before{
 }
 .services .serv-content .card:hover{
 	color: black; /*fund da letra dps d mouse*/
-	background: #324DE2;
+	background: royalblue;
 	
 	/*background-size: cover;*/
 } 
