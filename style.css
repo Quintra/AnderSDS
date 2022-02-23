@@ -103,8 +103,7 @@
 }
 .home .home-content a:hover{
     color: purple;
-    background: url(imagem/heh.gif);
-    background-size: cover;
+    background: black;
 }
 
 /*--Menu-Mobile--*/
