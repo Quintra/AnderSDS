@@ -10,15 +10,18 @@
     padding: 0 80px;
     margin: auto;
 }
+		/*  inicio  */
 .navbar{
     position: fixed;
     width: 100%;
     padding: 30px 0;
     font-family: 'Ubuntu', sans-serif;
+    z-index: 999;
+    transition: all 0.3s ease;
 }
 .navbar.sticky
 {
-	 padding: 30px 0;
+	 padding: 15px 0;
 
 }
 .navbar .max-width{
@@ -53,7 +56,7 @@
 
 .home{
     display: flex;
-	background-image: url('Imagem/LuaBaixa.png');
+	background-image: url('imagem/LuaBaixa.png');
 	background-size: 100%;
 	background-repeat: no-repeat;
     height: 150vh;
@@ -66,30 +69,43 @@
     width= "100" height="100">
 }
 .home .home-content .text-1{
-    font-size: 27px;
+    color: mediumpurple; 
+    font-size: 30px;
+}
+.home .home-content .text-1 span-1{
+	color: white; /* meu nome */
+    
 }
 .home .home-content .text-2{
-    font-size: 75px;
-    font-weight: 500;
+	color: darkblue;
+    font-size: 45px;
+    font-weight: 800;
     margin-left: 3px;
 }
 .home .home-content .text-3{
-    font-size: 40px;
+    font-size: 20px;
     margin: 5px 0;
 }
 .home .home-content .text-3 span{
-    color: purple; /*Titulo*/
+    color: mediumpurple; /*Titulo artista*/
     font-weight: 800;
 }
 .home .home-content a{
 	display: inline-block;
 	background: dark;
-	color: white;
-	font-size: 25px;
-	padding: 12px 36px;
-	margin-top: 20px;
+	color: white; /*cor do cont*/
+	font-size: 15px;
+	padding: 12px 16px;
+	margin-top: 10px;
 	border-radius: 6px;
 	border: 1px solid white; /*borda em volta do cont*/
+
+}
+.home .home-content a:hover{
+    color: purple;
+    background: url(imagem/heh.gif);
+    background-size: cover;
+
 }
 
 /*--Menu-Mobile--*/
@@ -99,28 +115,158 @@
 	cursor:-pointer;
 	display: none;
 }
+/*--tudo cod sim--*/
+section{
+	padding: 100px 0;
+}
+section .title{
+	font-family: 'Ubuntu', sans-serif;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 500px;
+	margin-bottom: 60px;
+	padding-bottom: 20px;
+	position: relative;
+}
+section .title::before{
+	content: "";
+	position: absolute;
+	bottom: 0;
+	left: 50%;
+	width: 180px;
+	height: 3px;
+	background: black;
+	transform: translateX(-50%);
+}
+section .title::after{
+	position: absolute;
+	bottom: -12px;
+	left: 50%;
+	font-size: 20px;
+	background: white; /* fundo la */
+	color: blueviolet;
+	padding: spx;
+	transform: translateX(-50%);
+}
 
 /*--sessao-sobre--*/
-.about{
-	font-family: 'Roboto' sans-serif;
+
 }
-.about .title{
-font-family: 'Roboto' sans-serif;
+.about, .services{
+	font-family: 'Roboto', sans-serif;
+}
+.about .about-content,
+.services .serv-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;	
+}
+.about .title::after{
+	content: Quem sou eu;
+}
+.about .about-content .left{
+	width: 45%;
+}
+.about .about-content .right{
+	width: 55%;
+}
+.about .about-content .right .text{
+	font-size: 25px;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+.about .about-content .right .text span{
+	color: darkblue;
+}
+.about .about-content .right p{
+	text-align: justify;
+}
+.about .about-content .right a{
+	display: inline-block; /*bo cv mouse*/
+	background: black;
+	color: white;
+	font-size: 20px;
+	padding: 10px 30px;
+	border border-radius: 6px;
+	border: 2px solid purple;
+	transition: all 0.3s ease;
+}
+.about .about-content .right a:hover{ 
+	color: black; 
+	background: none; /*botao do cv cor pas mouse*/
+}
+.about .about-content .left img{
+	width: 400px;
+	height: 400px;
+	object-fit: cover;
+	border-radius: 6px;
+}
+/*--sessao serviços--*/
+.services{
+	background: #141639; /*fundo la*/
+	color: white;
+}
+services .title::before{
+	background: pink;
+}
+.services .title::after{
+	background: #141639;
+	content: "que se foda";
+}
+.services .serv-content .card{
+	width: calc(33% - 20px);
+	background: #0B2A7D; /*fundo dos quadrados sem o mouse*/
+	text-align: center;
+	border-radius: 6px;
+	padding: 20px 25px;
+	cursor: pointer;
+	transition: all 0,3s ease;
+}
+.services .serv-content .card:hover{
+	color: black; /*fund da letra dps d mouse*/
+	background: url('imagem/ae.gif');
+	background-size: cover;
+} 
+.services .serv-content .card .box{
+	transition: all 0.3s ease;
+}
+.services .serv-content .card:hover .box{
+	transform: scale(1.05); /*escala do bagulho la em baixo*/
+}
+.services .serv-content .card ion-ion{
+	font-size: 70px;
+	color: purple;
+}
+services .serv-content .card:hover ion-ion{
+	color: hotpink;
+}
+.services .serv-content .card text{
+	font-size: 25px;
+	font-weight: 500;
+	margin: 10px 0 7px 0;
 }
 
-/--Responsivo--/
-@media (max-width: 1104px){
+/*--Responsivo--*/
+@media (max-width: 1300px){
 	.navbar .max-width{
 		margin-left: 0;
 	}
 }
-@media (max-width: 991px){
-	.navbar .max-width{
-		padding: 0 50px;
+@media (max-width: 1104px){
+	.about .about-content .left img{
+		width: 350px;
+		height: 350px;
 	}
 }
-@media (max-width: 947px){
+@media (max-width: 940px){
 	.max-width{
+		padding: 0 50px;
+		}
+}		
+@media (max-width: 940px){
+	.max-width{
+		max-width: 800px;
 		padding: 0 50px;
 	}
 	.menu-btn{
@@ -131,9 +277,9 @@ font-family: 'Roboto' sans-serif;
 		position: fixed;
 		width: 100%;
 		height: 100vh;
-		left: -100%;
+		left: 100%;
 		top: 0;
-		background: white;
+		background: midnightblue; /*roba menu fundo*/
 		padding-top: 80px;
 		text-align: center;
 		transition: all 0.3s ease;
@@ -158,6 +304,17 @@ font-family: 'Roboto' sans-serif;
 	.home .home-content a{
 		font-size: 23px;
 		padding: 10px 30px;
+	}
+	.about .about-content .column{
+		width: 50%;
+	}
+		.about .about-content .left{
+		display: flex;
+		justify-content: center;
+		margin: 0 auto 60px;
+	}
+	.about .about-content .right{
+		flex: 100%;
 	}
 }
 @media (max-width: 690px){
