@@ -56,9 +56,9 @@
 
 .home{
     display: flex;
-	background-image: url('imagem/LuaBaixa.png');
+	background-image: url('imagem/ae.gif');
 	background-size: 100%;
-	background-repeat: no-repeat;
+	background-repeat: repeat;
     height: 150vh;
     color: whitesmoke; /*nome*/
     min-height: 500px;
@@ -223,8 +223,8 @@ services .title::before{
 }
 .services .serv-content .card:hover{
 	color: black; /*fund da letra dps d mouse*/
-	background: url('imagem/ae.gif');
-	background-size: cover;
+	background: url('imagem/giii.gif');
+	background-size: 500%;
 } 
 .services .serv-content .card .box{
 	transition: all 0.3s ease;
