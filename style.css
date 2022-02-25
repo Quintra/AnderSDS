@@ -147,6 +147,17 @@ section .title::after{
 	padding: spx;
 	transform: translateX(-50%);
 }
+.about .about-content, .skills{
+	font-family: 'Roboto', sans-serif;
+}
+.about .about-content
+.services .serv-content,
+.skills .skills-content{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+}
 
 /*--sessao-sobre--*/
 
@@ -232,14 +243,14 @@ services .title::before{
 	transition: all 0.3s ease;
 }
 .services .serv-content .card:hover .box{
-	transform: scale(1.05); /*escala do bagulho la em baixo*/
+	transform: scale(1.10); /*escala do bagulho la em baixo*/
 }
-.services .serv-content .card ion-ion{
-	font-size: 70px;
+.services .serv-content .card ion-icon{
+	font-size: 50px;
 	color: purple;
 }
 services .serv-content .card:hover ion-ion{
-	color: black;
+	color: white; /*cor do icone*/
 }
 .services .serv-content .card text{
 	font-size: 25px;
