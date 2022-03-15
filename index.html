@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Pagina inicial - Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,9 +14,9 @@
             <ul class="menu">
                 <li><a href="#home">Inicio</a></li>
                 <li><a href="#about">Sobre</a></li>
-                <li><a href="#service">Conhecimento</a></li>
-                <li><a href="#contact">Contato</a></li>
+                <li><a href="#services">Conhecimento</a></li>
                 <li><a href="#skills">Especialidades</a></li>
+                <!-- <li><a href="#contact">Contato</a></li> -->
     		</ul>
     		<div class="menu-btn">
 				<ion-icon name="menu-outline"></ion-icon>
@@ -27,11 +28,11 @@
 	<section class="home" id="home">
         <div class="max-width">
             <div class="home-content">
-                <div class="text-1">Olá, <span-1 class="typing"></span-1></div>
+                <div class="text-1"> Olá<span-1 class="typing"></span-1></div> <!--em cima do nome-->
                 <meta charset="utf-8">
                 <div class="text-2">Anderson da Silva</div>
-                <!-- <div class="text-3">Eu sou <span>Artista</span></div> -->
-                <a href="#">Contratar-me</a>
+                <div class="text-3">Eu sou <span>Artista</span></div>
+                <a href="#contact">Contratar-me</a>
             </div>
         </div>
 	<div>
@@ -46,9 +47,9 @@
 	            	<img src="Imagem/Ppng.png" alt="">
 	            </div>
 	            <div class="column right">
-            		<div class= "text"> aqui eu digito algo <span>Kimetsu</span></div> <!--corrilulion-->
-            		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industryLorem Ipsum is simply d the industry</p>
-            		<a href="#">Download CV"</a>
+            		<div class= "text"> Um pouco sobre mim <span>㋡</span></div> <!--corrilulion-->
+            		<a href="Imagem/Currículo.pdf">Download CV</a>
+            		<p>Venho com o tempo estudando e aperfeiçoando as minhas tecnicas, com o Photoshop e começando com o Blender, nao sei tudo mas me esforçando consigo realizar os trabalhos</p>
 	            </div>
 	        </div>
 	 	</div>        
@@ -62,24 +63,24 @@
             	<div class="card">
             		<div class="box">
             		<ion-icon name="images-outline"></ion-icon>
-            		<div class="text">Artista</div>
-            		<p>Num Sei dps eu coloco alguma coisa pLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry ne Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry</p>
+            		<div class="text">Photoshop</div>
+            		<p>Criaçao de background, animados ou em looping/gif, ediçao de fotos/imagem, criaçao de cenarios  </p>
             		</div>
 	            </div>
 
 	            <div class="card">
             	 <div class="box">
             			<ion-icon name="layers-outline"></ion-icon>
-            		<div class="text">Anuncios</div>
-            		<p>Num Sei dps eu coloco alguma coisinha</p>
+            		<div class="text">Edição de Video</div>
+            		<p>Editei alguns videos, assim como alguns gifs que para complementar utilizei o Vegas</p>
             	   </div>
             	</div>
 
             	<div class="card">
             		<div class="box">
             		<ion-icon name="code-outline"></ion-icon>
-            		<div class="text">Artes</div>
-            		<p>Num Sei  and typesetting industry. Lorem Ipsum has been the industry</p>
+            		<div class="text">Sites</div>
+            		<p>Um exemplo seria este site, conforme vou aprendendo vou incrementando o site</p>
             		</div>
 	        </div>
 	    </div>
@@ -89,45 +90,45 @@
 
     <!--s especialidades-->
 
-    <section class="skills" id="skills">
-        <div class="max-width">
-        	<h2 class= "title">habilidades</h2>
-            <div class="skills-content">
-            	<div class="column left">
-            		<div class="text">Minhas habilidades criativas</div>
-            		<p>loreeeeeeeeeeeeeeeeim aquieeee</p>
-            		<a href="#">Mais Informações</a>
+<section class="skills" id="skills">
+		<div class="max-width">
+			<h2 class="title"></h2>
+			<div class="skills-content">
+				<div class="column left">
+					<div class="text"></div>
+					<p>Possuo conhecimento em edição de video no vegas e imagens/gifs no Photoshop e Ilustrator de Sites.</p>
+					<a href="https://steamuserimages-a.akamaihd.net/ugc/1287416175476758977/4ACC92C5B33D9EE540B0B08501AEEF7819D1E5D1/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false">Um Gif</a>
 				</div>
 				<div class="column right">
-				 	<div class="bars">
-				 		<div class="info">
-				 		<span>HTML</span>
-				 		<span>40%</span>
-				 	</div>
-				 	<div class="line html"></div>
-	            </div>
-	            <div class="column right">
-				 	<div class="bars">
-				 		<div class="info">
-				 		<span>CSS</span>
-				 		<span>40%</span>
-				 	</div>
-				 	<div class="line css"></div>
-	            </div>
-	            <div class="column right">
-				 	<div class="bars">
-				 		<div class="info">
-				 		<span>Photoshop</span>
-				 		<span>70%</span>
-				 	</div>
-				 	<div class="line photoshop"></div>
-	            </div>
-	            </div>
-	        </div>
-	 	</div>
-    </section>
+					<div class="bars">
+						<div class="info">
+							<span>Photoshop</span>
+							<span>80%</span>
+						</div>
+						<div class="line Photoshop"></div>
+					</div>
 
-    </section>
+					<div class="bars">
+						<div class="info">
+							<span>Ilustrator</span>
+							<span>50%</span>
+						</div>
+						<div class="line Ilustrator"></div>
+					</div>
+
+					<div class="bars">
+						<div class="info">
+							<span>HTML/CSS</span>
+							<span>40%</span>
+						</div>
+						<div class="line CSS"></div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+	
 
 		<h2 class= "title">Artes</h2>
 

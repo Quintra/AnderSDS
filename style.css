@@ -5,6 +5,22 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+body{
+  	animation: changeBackgroundColor 5s infinite;
+  }
+
+  @keyframes changeBackgroundColor {
+  	0% {
+    background-color: #1b7b9e;
+		}
+  	50% {
+    background-color: #15538a;
+		}
+  	100% {
+    background-color: #007acc;
+		}
+}
+
 .max-width{
     max-width: 1300px;
     padding: 0 80px;
@@ -31,12 +47,16 @@
     }
 .navbar .logo a{
     color: #0B2FC3; /*Port*/
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
     transition: all.0.3s.ease;
     font-size: 35px;
     font-weight: 620;
 }
 .navbar .logo a span{
     color: blueviolet; /*Folio*/
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
 
 }
 .navbar .menu li{
@@ -45,7 +65,7 @@
 }
 .navbar .menu li a{
     color: purple; /*rotbar*/
-    font-size: 18px;
+    font-size: 25px;
     font-weight: 500;
     margin-left: 25px;
     transition: color 0.3s ease;
@@ -59,14 +79,14 @@
 	background-image: url('Imagem/LuaBaixa.png');
 	background-size: 100%;
 	background-repeat: no-repeat;
-    height: 150vh;
+    height: 140vh;
     color: whitesmoke; /*nome*/
     min-height: 500px;
     font-family: 'Ubuntu', sans-serif;
 }
 .home .max-width{
     margin: auto 0 auto 40px;
-    width= "100" height="100">
+    width: "100" height="100"
 }
 .home .home-content .text-1{
     color: mediumpurple; 
@@ -78,7 +98,7 @@
     -webkit-text-stroke-color: #000;
     
 }
-.home .home-content .text-2{
+.home .home-content .text-2{ /*nome*/
 	color: white;
     font-size: 45px;
     font-family: 15;
@@ -129,21 +149,21 @@ section{
 section .title{
 	font-family: 'Ubuntu', sans-serif;
 	text-align: center;
-	font-size: 30px;
+	font-size: 40px;
 	font-weight: 500px;
 	margin-bottom: 60px;
 	padding-bottom: 20px;
 	position: relative;
 }
 section .title::before{
-	content: "_______";
+	content: "";
 	color: black;
 	position: absolute;
 	bottom: 0;
 	left: 50%;
-	width: 180px;
+	width: 80%;
 	height: 3px;
-	background: black;
+	background: #CCC;
 	transform: translateX(-50%);
 }
 section .title::after{
@@ -170,7 +190,6 @@ section .title::after{
 
 /*--sessao-sobre--*/
 
-}
 .about, .services{
 	font-family: 'Roboto', sans-serif;
 }
@@ -186,7 +205,7 @@ section .title::after{
 	content: Quem sou eu;
 }
 .about .about-content .left{
-	width: 45%;
+	width: -45%;
 }
 .about .about-content .right{
 	width: 55%;
@@ -223,16 +242,22 @@ section .title::after{
 	border-radius: 6px;
 }
 /*--sessao conhecimento--*/
+
+
 .services{
+
 	background: #141639; /*fundo la*/
+	/*background-color: rgba(105,0,0,0.5);*/
 	color: white;
+	
+
 }
 services .title::before{
 	background: blueviolet;
 }
 .services .title::after{
 	background: #141639;
-	content: "Nem sei";
+	content: "";
 }
 .services .serv-content .card{
 	width: calc(33% - 20px);
@@ -244,13 +269,13 @@ services .title::before{
 	transition: all 0,3s ease;
 }
 .services .serv-content .card:hover{
-	color: black; /*fund da letra dps d mouse*/
-	background: royalblue;
+	color: #fff; /*fund da letra dps d mouse*/
+	background: #222578;
 	
 	/*background-size: cover;*/
 } 
 .services .serv-content .card .box{
-	transition: all 0.3s ease;
+	transition: all 0.8s ease;
 }
 .services .serv-content .card:hover .box{
 	transform: scale(1.10); /*escala do bagulho la em baixo*/
@@ -259,7 +284,7 @@ services .title::before{
 	font-size: 50px;
 	color: purple;
 }
-services .serv-content .card:hover ion-ion{
+.services .serv-content .card:hover ion-ion{
 	color: white; /*cor do icone*/
 }
 .services .serv-content .card text{
@@ -362,14 +387,14 @@ services .serv-content .card:hover ion-ion{
 	left: 0;
 	background: blueviolet;
 }
-.skills .skills-content .right .html::before{
-	width: 40%;
+.skills .skills-content .right .Photoshop::before{
+	width: 80%;
 }
-.skills .skills-content .right .css::before{
-	width: 40%;
+.skills .skills-content .right .Ilustrator::before{
+	width: 50%;
 }
-.skills .skills-content .right .photoshop::before{
-	width: 70%;
+.skills .skills-content .right .CSS::before{
+	width: 40%;
 }
 	
 

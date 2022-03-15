@@ -14,7 +14,7 @@ $(document).ready(function(){
         $('html').animate({scrollTop:0});
     })
 
-    var typed = new Typed(".typing", {
+    var typed = new Typed(".typing",{
         strings:["Meu nome é"],
         typeSpeed:100,
         backSpeed:60,
