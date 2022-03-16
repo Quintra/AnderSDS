@@ -10,6 +10,19 @@ $(document).ready(function(){
             $('.scroll-up-btn').removeClass("show");
         }
     });
+
+$(window).scroll(function() { 
+    var scroll = $(window).scrollTop();
+
+    if (scroll > 400) {
+        $('.navbar .logo a').css('color','blueviolet');
+    } else {
+        $('.navbar .logo a span').css('color','#0B2FC3');
+    }
+});
+
+
+
     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop:0});
     })

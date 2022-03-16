@@ -57,15 +57,15 @@ body{
     color: blueviolet; /*Folio*/
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
-
 }
+
 .navbar .menu li{
     list-style: none;
     display: inline-block;
 }
 .navbar .menu li a{
     color: purple; /*rotbar*/
-    font-size: 25px;
+    font-size: 18px;
     font-weight: 500;
     margin-left: 25px;
     transition: color 0.3s ease;
@@ -100,15 +100,15 @@ body{
 }
 .home .home-content .text-2{ /*nome*/
 	color: white;
-    font-size: 45px;
-    font-family: 15;
+    font-size: 54px;
+    font-family: 25;
     font-weight: 800;
     margin-left: 3px;
     -webkit-text-stroke-width: 2px;
     -webkit-text-stroke-color: #000;
 }
 .home .home-content .text-3{
-    font-size: 20px;
+    font-size: 25px;
     margin: 5px 0;
     color: white;
     -webkit-text-stroke-width: 1px;
@@ -396,6 +396,21 @@ services .title::before{
 .skills .skills-content .right .CSS::before{
 	width: 40%;
 }
+
+.sitefora
+	div{
+    position: relative;
+    width: 604px;
+    height: 500px;
+}
+	iframe{
+    position: absolute;            
+    top: -95px;
+    left: -25px;
+    width: 1024px;
+    height: 768px;
+}
+
 	
 
 /*--Responsivo--*/
