@@ -1,33 +1,41 @@
 $(document).ready(function(){
     $(window).scroll(function(){
-        if(this.scrollY > 20){
+        if(this .scrollY > 20){
             $('.navbar').addClass("sticky");
         }else{
             $('.navbar').removeClass("sticky");
-        }if(this.scroll > 500){
+        }
+        if(this .scrollY > 500){
             $('.scroll-up-btn').addClass("show");
         }else{
             $('.scroll-up-btn').removeClass("show");
         }
     });
+     $('.scroll-up-btn').click(function(){
+        $('html').animate({scrollTop:0});
+     });
 
-$(window).scroll(function() { 
+     /*-------mudar cor-------*/
+
+    $(window).scroll(function() { 
     var scroll = $(window).scrollTop();
 
-    if (scroll > 400) {
+    if (scroll > 600) {
         $('.navbar .logo a').css('color','blueviolet');
-    } else {
-        $('.navbar .logo a span').css('color','#0B2FC3');
+    }else{
+        $('.navbar .logo a').css('color','#0B2FC3');
     }
-});
 
+    if (scroll > 600) {
+        $('.navbar .logo a span').css('color','#0B2FC3');
+    }else{
+        $('.navbar .logo a span').css('color','blueviolet');
+    }
+    });
 
+         /*----mudar cor-------*/
 
-    $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop:0});
-    })
-
-    var typed = new Typed(".typing",{
+    var typed = new Typed(".typing", {
         strings:["Meu nome é"],
         typeSpeed:100,
         backSpeed:60,
