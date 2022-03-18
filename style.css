@@ -43,16 +43,14 @@ body{
     transition: all 0.3s ease;
 
 }
-.navbar.sticky
-{
+.navbar.sticky{
 	 padding: 15px 0;
-
 }
 .navbar .max-width{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    }
+}
 .navbar .logo a{
     color: #0B2FC3; /*Port*/
     letter-spacing: 8px;
@@ -60,7 +58,7 @@ body{
     -webkit-text-stroke-color: white;
     transition: all.0.3s.ease;
     font-size: 50px;
-    font-weight: 620;
+    font-weight: 500;
     animation-timing-function: linear;
  	position: relative;
   	animation: mymove 5s infinite;
@@ -74,6 +72,7 @@ body{
 .navbar .logo a span{
     color: blueviolet; /*Folio*/
     letter-spacing: 8px;
+    transition: all 0.3s ease;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
 }
@@ -473,7 +472,7 @@ services .title::before{
 .skills .skills-content .right .CSS::before{
 	width: 40%;
 }
-
+/*
 .sitefora
 	div{
     position: relative;
@@ -487,19 +486,29 @@ services .title::before{
     width: 1024px;
     height: 768px;
 }
-
+*/
 	
 
 /*--Responsivo--*/
-@media (max-width: 1300px){
+@media (max-width: 1300px){ /*rotbar*/
 	.navbar .max-width{
 		margin-left: 0;
 	}
+	.navbar .logo a{
+		width: 0px;
+		height: 0px;
+	}
+	@keyframes mymove {
+  from {left: -20px;}
+  to {left: 50px;}
 }
-@media (max-width: 1104px){
+		
+
+}
+@media (max-width: 1104px){ /*foto perfil*/
 	.about .about-content .left img{
-		width: 350px;
-		height: 350px;
+		width: 300px;
+		height: 250px;
 	}
 }
 @media (max-width: 940px){
@@ -513,14 +522,14 @@ services .title::before{
 		padding: 0 50px;
 	}
 	.menu-btn{
-		display: flex;
+		display: block;
 		z-index: 999;
 	}
 	.navbar .menu{
 		position: fixed;
 		width: 100%;
 		height: 100vh;
-		left: 100%;
+		left: -100%;
 		top: 0;
 		background: midnightblue; /*roba menu fundo*/
 		padding-top: 80px;
@@ -565,7 +574,7 @@ services .title::before{
 	}
 	.skills .skills-content .column{
 		width: 100%;
-		margin-bottom: 35px; /*mais info*/
+		margin-bottom: 10px; /*mais info*/
 
 	}
 }
