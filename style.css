@@ -68,8 +68,8 @@ body{
   	animation-direction: alternate;
  }
  	@keyframes mymove {
-  from {left: -180px;}
-  to {left: 150px;}
+  from {left: -50px;}
+  to {left: 250px;}
 }
 .navbar .logo a span{
     color: blueviolet; /*Folio*/
