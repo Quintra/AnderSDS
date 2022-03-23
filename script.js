@@ -3,15 +3,19 @@ $(document).ready(function(){
             if(this.scrollY > 20){
                 $('.navbar').addClass("sticky");
             }else{
-                $('.navbar').removeClass("sticky"); 
-        }
+                $('.navbar').removeClass("sticky");
+            }
         if(this.scrollY > 500){
             $('.scroll-up-btn').addClass("show");
         }else{
             $('.scroll-up-btn').removeClass("show");
         }
+});
+$('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
     });
-    $('.scroll-up-btn').click(function(){
+     $('.scroll-up-btn').click(function(){
         $('html').animate({scrollTop:0});
      });
 
@@ -20,11 +24,6 @@ $(document).ready(function(){
     typeSpeed:100,
     backSpeed:60,
     loop:true
-    });
-
-$('.menu-btn').click(function(){
-        $('.navbar .menu').toggleClass("active");
-        $('.menu-btn i').toggleClass("active");
     });
     $('.carousel').owlCarousel({
         margin:20,

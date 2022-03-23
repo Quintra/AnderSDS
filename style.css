@@ -10,22 +10,45 @@ html{
 	scroll-behavior: smooth;
 }
 body{
-  	animation: changeBackgroundColor 4s infinite;
-  	background: #085a78;
-	background-image:  linear-gradient(80deg, #1898bf 12%, transparent 18.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(150deg, #1898bf 12%, transparent 12.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(30deg, #1898bf 12%, transparent 12.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(150deg, #1898bf 12%, transparent 12.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(60deg, #1898bf77 25%, transparent 25.5%, transparent 75%, #1898bf77 75%, #1898bf77), linear-gradient(60deg, #1898bf77 25%, transparent 25.5%, transparent 75%, #1898bf77 75%, #1898bf77);
+  scrollbar-width: thin;
+  scrollbar-color: red;
+}
+
+/* scrolllll */
+*::-webkit-scrollbar {
+  width: 10px;
+}
+
+*::-webkit-scrollbar-track {
+  background: black;
+}
+
+*::-webkit-scrollbar-thumb { 
+	background-size: 20px 35px;
+	background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;	 
+ 	border-radius: 20px;
+  	border: 1px solid white;
+}
+body{
+	background-color: #2b0a36;
+	background-size: 30px 30px;
+	background-image:  repeating-linear-gradient(0deg, #000000, transparent 1.2px, transparent 30px, transparent);
+	/*
+  	background-color: #090f2e;
+	background-image:  linear-gradient(250deg, #1898bf 12%, transparent 18.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(150deg, #1898bf 12%, transparent 12.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(38deg, #1898bf 12%, transparent 12.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(150deg, #1898bf 12%, transparent 12.5%, transparent 87%, #1898bf 87.5%, #1898bf), linear-gradient(60deg, #1898bf77 25%, transparent 25.5%, transparent 75%, #1898bf77 75%, #1898bf77), linear-gradient(60deg, #1898bf77 25%, transparent 25.5%, transparent 75%, #1898bf77 75%, #1898bf77);
 	background-size: 20px 35px;
 	background-position: 0 0, 0 0, 10px 18px, 10px 18px, 0 0, 10px 18px;
-  }
+	*/	
+	animation: changeBackgroundColor 2s infinite; 
+}
 @keyframes changeBackgroundColor {
-  	0% {
-    background-color: #02ced9;
+  	50% {
+    background-color: #2b0a36;
 		}
-  	100% {
-    background-color: #085a78;
+  	50% {
+    background-color: #160845;
 		}
-  	20% {
-    background-color: #02ced9;
-		}
+		
 }
 
 .max-width{
@@ -41,11 +64,22 @@ body{
     font-family: 'Ubuntu', sans-serif;
     z-index: 999;
     transition: all 0.3s ease;
+    background: transparent;
 
 }
 .navbar.sticky{
-	 padding: 15px 0;
+	padding: 10px 0;
+    background: repeating-linear-gradient(90deg, royalblue,#CCC,blue, blueviolet, royalblue);
+    background-repeat:repeat-x;
+    position: fixed;
+    background-size: 400% 100%;
+    animation: AnimationName 3s linear infinite;
 }
+@keyframes AnimationName {
+    0%{background-position:100% 50%}
+    100%{background-position:-33% 50%}
+}
+
 .navbar .max-width{
     display: flex;
     align-items: center;
@@ -57,7 +91,7 @@ body{
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: white;
     transition: all.0.3s.ease;
-    font-size: 50px;
+    font-size: 60px;
     font-weight: 500;
     animation-timing-function: linear;
  	position: relative;
@@ -65,10 +99,30 @@ body{
   	animation-iteration-count: infinite;
   	animation-direction: alternate;
  }
- 	@keyframes mymove {
-  from {left: -50px;}
-  to {left: 250px;}
+@keyframes mymove {
+	  from {left: -50px;}
+	  to {left: 250px;}
+} 
+.navbar .logo {
+	animation: bounce 1s infinite alternate;
+  	-webkit-animation: bounce 1s infinite alternate;
 }
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-15px);
+  }
+}
+@keyframes go-back {
+    0% {
+        transform: translateX(100px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+} 
 .navbar .logo a span{
     color: blueviolet; /*Folio*/
     letter-spacing: 8px;
@@ -119,7 +173,6 @@ body{
 	color: white; /* meu nome é */
 	-webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: #000;
-    
 }
 .home .home-content .text-2{ /*nome*/
 	color: white;
@@ -158,6 +211,7 @@ body{
     background: black;
 }
 /*--Menu-Mobileeeeee--*/
+
 .menu-btn{
 	color: white; /*3 traços*/
 	font-size: 25px; 
@@ -205,18 +259,40 @@ body{
 /*--tudo cod sim--*/
 section{
 	padding: 100px 0;
+	color: white;
 }
 section .title{
 	font-family: 'Ubuntu', sans-serif;
-	text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 1;
+        animation: animate 3s ease-out forwards infinite;
+        animation-delay: 1s;
 	font-size: 40px;
 	font-weight: 500px;
 	margin-bottom: 60px;
 	padding-bottom: 20px;
 	position: relative;
 }
+	        /* For animation */
+        @keyframes animate {
+            0% {
+                letter-spacing: -10px;
+            }
+  
+            20% {
+                letter-spacing: 40px;
+            }
+  
+            100% {
+                letter-spacing: 30px;
+            }
+        }
+}
 section .title::before{
-	content: "";
+	content: " ";
 	color: black;
 	position: absolute;
 	bottom: 0;
@@ -265,23 +341,42 @@ section .title::after{
 }
 .about .title::after{
 	content: Quem sou eu;
+
 }
-.about .about-content .left{
+.about .about-content .left{ /*fundo da foto*/
 	width: -45%;
+
 }
-.about .about-content .right{
+.about .about-content .right{ /*textooooo*/
 	width: 55%;
+	font-size: 20px;
+	color: white;
+
 }
-.about .about-content .right .text{
-	font-size: 25px;
+.about .about-content .right .text{ /*sobre mim*/
+	font-size: 30px;
 	font-weight: 500;
 	margin-bottom: 10px;
+	color: white;
+
 }
-.about .about-content .right .text span{
-	color: darkblue;
+.about .about-content .right .text span{ /*carinha*/
+	color: #D8D8BF;
+	font-size: 35px;
+	animation: rg 1s infinite;
+}
+	@keyframes rg {
+	50% {
+		color: #CCC;
+	}
+	50% {
+		color: transparent;
+	}
+
 }
 .about .about-content .right p{
 	text-align: justify;
+
 }
 .about .about-content .right a{
 	display: inline-block; /*bo cv mouse*/
@@ -292,15 +387,32 @@ section .title::after{
 	border border-radius: 6px;
 	border: 2px solid black;
 	transition: all 0.3s ease;
+	border-color: ;
+	animation: bjj 2s infinite;
+	margin-bottom: 10px;
+	border-bottom-left-radius: 50px 100px;
+	border-bottom-right-radius: 50px 100px;
+	border-width: 4px;
+	border-style: double;
+}
+@keyframes bjj {
+	50% {
+		border-color: transparent;
+	}
+	50% {
+		border-color: white;
+	}
 }
 .about .about-content .right a:hover{ 
 	color: black; 
-	background: none; /*botao do cv cor pas mouse*/
+	background: white; /*botao do cv cor pas mouse*/
 }
 .about .about-content .left img{ /*imagem perfil*/
 	width: 400px;
 	height: 400px;
 	object-fit: cover;
+}
+.about .about-content .left img{
 	border-radius: 6px;
  	border-top-width: none;
  	border-bottom-width: 9px;
@@ -308,7 +420,17 @@ section .title::after{
  	border-bottom-color: black;
  	border-width: 6px;
  	border-style: double;
- 	border-color: rgba(right, yellow 10%, blue 0%)
+ 	border-color: ;
+	animation: borg 2s infinite;
+}
+	@keyframes borg {
+	50% {
+		color: #0069D9;
+	}
+	50% {
+		color: purple;
+	}
+
 }
 /*--sessao conhecimento--*/
 
@@ -365,6 +487,59 @@ services .title::before{
 }
 /*imagns*/
 
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400&display=swap');
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-galeria{
+    display: grid;
+    grid-template-columns: repeat(6,1fr);
+    grid-auto-rows: 300px;
+    padding: 5px;
+    grid-gap: 5px;
+}
+
+.item-galeria{
+    position: relative;
+}
+
+.item-galeria .img-galeria{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.item-galeria .title-galeria{
+    position: absolute;
+    background-color: rgba(0,0,0,0.8);
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    padding: 10px;
+    font-size: 16pt;
+    font-family: 'Quicksand';
+}
+
+
+.h-1{
+    grid-row: span 1;
+}
+
+.h-2{
+    grid-row: span 2;
+}
+
+.w-1{
+    grid-column: span 1;
+}
+
+.w-2{
+    grid-column: span 2;
+}
+/*
 .grid{
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -393,7 +568,7 @@ services .title::before{
 	grid-row: 2;
 	align-self: end;
 } 
-
+*/
 
 
 
@@ -502,8 +677,33 @@ services .title::before{
   from {left: -20px;}
   to {left: 50px;}
 }
-		
-
+@media (max-width: 1110px){
+	section .title{
+		font-family: 'Ubuntu', sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        opacity: 1;
+        animation: animate 3s ease-out forwards infinite;
+        animation-delay: 1s;
+        	font-size: 50px;
+	font-weight: 10px;
+}
+	        /* For animation */
+        @keyframes animate {
+            0% {
+                letter-spacing: -5px;
+            }
+  
+            20% {
+                letter-spacing: 5px;
+            }
+  
+            100% {
+                letter-spacing: 10px;
+            }
+  
 }
 @media (max-width: 1104px){ /*foto perfil*/
 	.about .about-content .left img{
@@ -527,8 +727,8 @@ services .title::before{
 	}
 	.navbar .menu{
 		position: fixed;
-		width: 100%;
 		height: 100vh;
+		width: 100%;
 		left: -100%;
 		top: 0;
 		background: midnightblue; /*roba menu fundo*/
@@ -546,6 +746,9 @@ services .title::before{
 		display: inline-block;
 		margin: 20px 0;
 		font-size: 25px;
+	}
+		.menu-btn i .active{
+		content: "\f00d";
 	}
 	.home .home-content .text-2{
 		font-size: 70px;
@@ -579,6 +782,14 @@ services .title::before{
 	}
 }
 @media (max-width: 690px){
+	.home{
+		display: flex;
+		background-image: url('Imagem/LuaBaixa.png');
+		background-size: full;
+		background-repeat: no-repeat;
+		height: 180vh
+
+	}
 	.home .home-content .text-2{
 		font-size: 60px;
 	}
@@ -602,7 +813,25 @@ services .title::before{
 }
 
              /*imagem fundo*/
-img {
+/*img {
 	max-width: 100%;
 	display: block;
+} */
+
+
+
+
+@media(max-width:768px){
+    .container-galeria{
+        grid-template-columns: repeat(1,1fr);
+        grid-auto-rows: 50vh;
+    }
+
+    .h-2{
+        grid-row: span 1;
+    }
+    
+    .w-2{
+        grid-column: span 1;
+    }
 }
