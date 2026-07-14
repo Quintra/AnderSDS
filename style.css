@@ -98,11 +98,9 @@ img {
     z-index: 999;
     transition: all 0.3s ease;
     
-    /* Fundo opaco inicial usando a cor do card com um leve toque de transparência (0.9) */
-    background: rgba(13, 24, 48, 0.9); 
-    border-bottom: 1px solid rgba(29, 51, 92, 0.5); /* Linha sutil na borda inferior */
-    backdrop-filter: blur(8px); /* Efeito opaco estilo vidro borrado moderno */
-    -webkit-backdrop-filter: blur(8px);
+    /* MODIFICADO: Fundo 100% opaco (sólido) para não deixar nada vazar por trás */
+    background: var(--bg-card); 
+    border-bottom: 1px solid var(--border);
 }
 
 .navbar.sticky {
@@ -111,6 +109,7 @@ img {
     border-bottom: 1px solid var(--border);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
 }
+
 .navbar .max-width {
     display: flex;
     align-items: center;
@@ -430,21 +429,7 @@ img {
     line-height: 1.6;
 }
 
-/* ---- Responsivo para os Cards ---- */
-@media (max-width: 940px) {
-    .services .services-content .card {
-        width: calc(50% - 10px);
-        margin-bottom: 20px;
-    }
-}
-
-@media (max-width: 600px) {
-    .services .services-content .card {
-        width: 100%;
-    }
-}
-
-/* ---- Seção: Especialidades (Moderna com GIF e Linha do Tempo) ---- */
+/* ---- Seção: Especialidades ---- */
 .skills {
     background: var(--bg-card);
     border-top: 1px solid var(--border);
@@ -474,7 +459,7 @@ img {
 .skills .gif-container {
     position: relative;
     width: 100%;
-    max-width: 280px; /* Reduzimos um pouco o tamanho máximo mantendo a proporção */
+    max-width: 280px; 
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid var(--border);
@@ -490,7 +475,7 @@ img {
 .skills .portfolio-gif {
     width: 100%;
     height: auto;
-    aspect-ratio: 381/611; /* Mantém a proporção exata informada */
+    aspect-ratio: 381/611; 
     object-fit: cover;
     display: block;
 }
@@ -585,7 +570,7 @@ img {
     margin-top: 10px;
 }
 
-/* Tags de Especialidades Modorneas (Sem Porcentagem) */
+/* Tags de Especialidades Modorneas */
 .skills .tech-tags {
     display: flex;
     flex-wrap: wrap;
@@ -679,19 +664,28 @@ img {
     margin-top: 5px;
 }
 
-/* ---- Responsivo para a seção de Especialidades ---- */
+/* ---- Responsivo para os Cards e Especialidades ---- */
 @media (max-width: 940px) {
+    .services .services-content .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
     .skills .skills-content .left,
     .skills .skills-content .right {
         width: 100% !important;
     }
-    
     .skills .gif-container {
-        max-width: 240px; /* Reduz um pouquinho em telas menores para melhor proporção */
+        max-width: 240px; 
     }
 }
 
-/* ---- Responsivo / Media Queries ---- */
+@media (max-width: 600px) {
+    .services .services-content .card {
+        width: 100%;
+    }
+}
+
+/* ---- Responsivo / Media Queries Gerais ---- */
 @media (max-width: 1300px) {
     .max-width { padding: 0 40px; }
 }
@@ -739,4 +733,37 @@ img {
     .home .home-content .text-2 { font-size: 38px; }
     .home .home-content .text-3 { font-size: 18px; }
     .max-width { padding: 0 20px; }
+}
+
+/* ---- Botão de Voltar ao Topo (Scroll Up) ---- */
+.scroll-up-btn {
+    position: fixed;
+    height: 45px;
+    width: 45px;
+    background: var(--primary);
+    right: 30px;
+    bottom: 30px;
+    text-align: center;
+    line-height: 45px;
+    color: var(--bg-body);
+    z-index: 9999;
+    font-size: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.scroll-up-btn:hover {
+    background: var(--vo);
+    transform: scale(1.05);
+}
+
+.scroll-up-btn.show {
+    opacity: 1;
+    pointer-events: auto;
 }

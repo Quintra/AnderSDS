@@ -27,9 +27,12 @@ $(document).ready(function(){
         }
     });
 
-    // Ação do botão scroll top
+    // Ação do botão scroll top (Corrigido para rolagem suave nativa)
     $('.scroll-up-btn').click(function(){
-        $('html').animate({scrollTop:0}, "smooth");
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
     // Efeito de digitação (Typed.js)
