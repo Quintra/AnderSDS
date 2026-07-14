@@ -107,7 +107,6 @@ img {
 
 .navbar.sticky {
     padding: 12px 0;
-    /* Fundo totalmente sólido e opaco quando o usuário rola a página */
     background: var(--bg-card);
     border-bottom: 1px solid var(--border);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
@@ -159,7 +158,7 @@ img {
 .home {
     display: flex;
     /* Imagem limpa e centralizada */
-    background: url('Imagem/LuaBaixa.png') no-repeat center center;
+    background: url('imagem/luabaixa.png') no-repeat center center;
     background-size: cover;
     height: 100vh;
     min-height: 500px;
@@ -176,14 +175,14 @@ img {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(6, 13, 31, 0.4); /* 0.4 é a opacidade da sombra sobre a imagem. Aumente se o texto sumir */
+    background: rgba(6, 13, 31, 0.4); 
     z-index: 1;
 }
 
 .home .max-width {
     width: 100%;
     position: relative;
-    z-index: 2; /* Garante que o texto fique acima da camada escura */
+    z-index: 2; 
 }
 
 /* Sombra nas letras para destacar o texto sobre qualquer imagem */
@@ -299,7 +298,7 @@ img {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
 }
 
-/* Área reservada para o Logo das Empresas */
+/* Ajuste e padronização dos Logos das Empresas Inicio*/
 .experience .company-logo {
     width: 100%;
     height: 60px;
@@ -311,12 +310,15 @@ img {
 }
 
 .experience .company-logo img {
-    max-height: 100%;
-    width: auto;
-    object-fit: contain;
+    width: 60px;          
+    height: 60px;         
+    object-fit: cover;    
+    object-position: center; 
     margin-right: 15px;
+    background: #ffffff;  
+    padding: 2px;        
 }
-
+/* Ajuste e padronização dos Logos das Empresas Fim */
 .experience .company-logo span {
     font-size: 22px;
     font-weight: 700;
@@ -359,174 +361,334 @@ img {
     font-size: 16px;
 }
 
-/* ---- Seção: Conhecimento (Cards) ---- */
+/* ---- Seção: Áreas de Atuação  ---- */
+.services {
+    background: var(--bg-body);
+    padding: 100px 0;
+}
+
 .services .title::after {
-    content: "Minhas Verticais";
+    content: "O que eu faço de melhor";
     background: var(--bg-body);
 }
 
-.services .serv-content {
+.services .services-content {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
+    align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 
-.services .serv-content .card {
-    width: calc(33.33% - 17px);
+.services .services-content .card {
+    width: calc(33.33% - 14px);
     background: var(--bg-card);
-    border: 1px solid var(--border);
     text-align: center;
-    border-radius: 8px;
+    border-radius: 12px;
     padding: 40px 25px;
     cursor: pointer;
+    border: 1px solid var(--border);
     transition: all 0.3s ease;
 }
 
-.services .serv-content .card:hover {
+.services .services-content .card:hover {
+    background: var(--secondary);
     border-color: var(--primary);
-    transform: translateY(-5px);
+    transform: translateY(-8px);
 }
 
-.services .serv-content .card .box {
+.services .services-content .card .box {
     transition: all 0.3s ease;
 }
 
-.services .serv-content .card ion-icon {
+.services .services-content .card:hover .box {
+    transform: scale(1.02);
+}
+
+.services .services-content .card ion-icon {
     font-size: 45px;
     color: var(--primary);
+    transition: color 0.3s ease;
     margin-bottom: 15px;
 }
 
-.services .serv-content .card .text {
-    font-size: 22px;
-    font-weight: 500;
-    margin-bottom: 10px;
+.services .services-content .card:hover ion-icon {
     color: var(--vi);
 }
 
-.services .serv-content .card p {
+.services .services-content .card .text {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 10px 0 12px 0;
+    color: var(--text-dark);
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.services .services-content .card p {
+    font-size: 14px;
     color: var(--text-light);
-    font-size: 15px;
     line-height: 1.6;
 }
 
-/* ---- Seção: Especialidades (Bars) ---- */
+/* ---- Responsivo para os Cards ---- */
+@media (max-width: 940px) {
+    .services .services-content .card {
+        width: calc(50% - 10px);
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .services .services-content .card {
+        width: 100%;
+    }
+}
+
+/* ---- Seção: Especialidades (Moderna com GIF e Linha do Tempo) ---- */
 .skills {
     background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
 }
 
 .skills .title::after {
-    content: "Proficiência";
+    content: "Educação & Competências";
     background: var(--bg-card);
 }
 
 .skills .skills-content {
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    gap: 40px;
 }
 
-.skills .skills-content .column {
-    width: calc(50% - 30px);
-}
-
-.skills .skills-content .left p {
-    text-align: justify;
-    line-height: 1.7;
-    margin-bottom: 25px;
-    color: var(--text-light);
-}
-
-.skills .skills-content .left a {
-    display: inline-block;
-    background: transparent;
-    color: var(--vo);
-    font-size: 15px;
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: 1px solid var(--border);
-    transition: all 0.3s ease;
-    font-weight: 500;
-}
-
-.skills .skills-content .left a:hover {
-    background: var(--secondary);
-    color: var(--vi);
-    border-color: var(--primary);
-}
-
-.skills .skills-content .right .bars {
-    margin-bottom: 20px;
-}
-
-.skills .skills-content .right .info {
+/* Coluna do GIF (Proporção 381x611) */
+.skills .skills-content .left {
+    width: 35%;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 8px;
-}
-
-.skills .skills-content .right span {
-    font-weight: 500;
-    font-size: 16px;
-}
-
-.skills .skills-content .right .line {
-    width: 100%;
-    height: 8px;
-    background: var(--bg-body);
-    position: relative;
-    border-radius: 4px;
-    border: 1px solid var(--border);
-}
-
-.skills .skills-content .right .line::before {
-    content: "";
-    position: absolute;
-    height: 100%;
-    top: 0;
-    left: 0;
-    background: linear-gradient(90deg, var(--secondary), var(--primary));
-    border-radius: 4px;
-}
-
-/* Ajuste dos Gráficos de Habilidades */
-.skills .skills-content .right .TI::before { width: 85%; }
-.skills .skills-content .right .Photoshop::before { width: 80%; }
-.skills .skills-content .right .CSS::before { width: 40%; }
-
-/* ---- Botão Scroll Up ---- */
-.scroll-up-btn {
-    position: fixed;
-    width: 45px;
-    height: 45px;
-    right: 30px;
-    bottom: 30px;
-    color: var(--bg-body);
-    background: var(--primary);
-    border-radius: 50%;
-    font-size: 28px;
-    z-index: 9999;
-    cursor: pointer;
-    opacity: 0;
-    pointer-events: none;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
     justify-content: center;
 }
 
-.scroll-up-btn.show {
-    opacity: 1;
-    pointer-events: auto;
+.skills .gif-container {
+    position: relative;
+    width: 100%;
+    max-width: 280px; /* Reduzimos um pouco o tamanho máximo mantendo a proporção */
+    border-radius: 12px;
+    overflow: hidden;
+    border: 2px solid var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
-.scroll-up-btn:hover {
-    background: var(--vi);
-    color: var(--bg-body);
-    transform: scale(1.1);
+.skills .gif-container:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary);
+}
+
+.skills .portfolio-gif {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 381/611; /* Mantém a proporção exata informada */
+    object-fit: cover;
+    display: block;
+}
+
+.skills .gif-badge {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(13, 24, 48, 0.9);
+    backdrop-filter: blur(5px);
+    color: var(--primary);
+    text-align: center;
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 500;
+    border-top: 1px solid var(--border);
+}
+
+/* Coluna das Formações */
+.skills .skills-content .right {
+    width: 60%;
+}
+
+.skills .skills-content .right .sub-title {
+    font-size: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* Estrutura de Linha de Tempo para Educação */
+.skills .education-timeline {
+    border-left: 2px solid var(--border);
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.skills .edu-item {
+    position: relative;
+}
+
+.skills .edu-icon {
+    position: absolute;
+    left: -31px;
+    top: 2px;
+    width: 20px;
+    height: 20px;
+    background: var(--bg-card);
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    font-size: 11px;
+}
+
+.skills .edu-info h4 {
+    font-size: 18px;
+    color: var(--vi);
+    margin-bottom: 3px;
+}
+
+.skills .edu-info .institution {
+    font-size: 14px;
+    color: var(--primary);
+    display: block;
+    font-weight: 500;
+}
+
+.skills .edu-info .edu-date {
+    font-size: 13px;
+    color: var(--text-light);
+    display: inline-block;
+    background: rgba(29, 51, 92, 0.4);
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-top: 5px;
+    font-weight: 500;
+    border: 1px solid var(--border);
+}
+
+.skills .edu-info .edu-desc {
+    font-size: 14px;
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-top: 10px;
+}
+
+/* Tags de Especialidades Modorneas (Sem Porcentagem) */
+.skills .tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.skills .tech-tags .tag {
+    background: var(--bg-body);
+    border: 1px solid var(--border);
+    color: var(--accent);
+    padding: 8px 16px;
+    font-size: 14px;
+    border-radius: 30px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.skills .tech-tags .tag:hover {
+    background: var(--secondary);
+    border-color: var(--primary);
+    color: var(--vi);
+    transform: translateY(-2px);
+}
+
+/* ---- Estilização da Grade Curricular (Syllabus) ---- */
+.skills .course-syllabus {
+    margin-top: 15px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.skills .syllabus-title {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--primary);
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Badges para o curso da Prepara */
+.skills .syllabus-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.skills .syllabus-badges span {
+    background: var(--bg-body);
+    border: 1px solid var(--border);
+    color: var(--text-dark);
+    font-size: 12px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-weight: 500;
+}
+
+/* Blocos de Semestres para o João XXIII */
+.skills .semester-box {
+    border-left: 3px solid var(--accent);
+    padding-left: 12px;
+    margin-bottom: 12px;
+}
+
+.skills .semester-box:last-child {
+    margin-bottom: 0;
+    border-left-color: var(--primary);
+}
+
+.skills .semester-header {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--vi);
+    margin-bottom: 4px;
+}
+
+.skills .semester-box p,
+.skills .semester-details {
+    font-size: 13px;
+    color: var(--text-light);
+    line-height: 1.5;
+}
+
+.skills .semester-details strong {
+    color: var(--text-dark);
+    display: inline-block;
+    margin-top: 5px;
+}
+
+/* ---- Responsivo para a seção de Especialidades ---- */
+@media (max-width: 940px) {
+    .skills .skills-content .left,
+    .skills .skills-content .right {
+        width: 100% !important;
+    }
+    
+    .skills .gif-container {
+        max-width: 240px; /* Reduz um pouquinho em telas menores para melhor proporção */
+    }
 }
 
 /* ---- Responsivo / Media Queries ---- */
